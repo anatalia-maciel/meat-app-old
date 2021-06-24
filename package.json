@@ -1,0 +1,49 @@
+{
+  "name": "meat-app-old",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "postinstall": "npm run copy-libs",
+    "update-deps": "npm update",
+    "postupdate-deps": "npm run copy-libs",
+    "copy-libs": "cpx \"node_modules/{angular,angular-*,admin-lte/dist,admin-lte/plugins/fontawesome-free,admin-lte/plugins/overlayScrollbars,admin-lte/plugins/chart.js,admin-lte/plugins/jquery-mapael,admin-lte/plugins/raphael,admin-lte/plugins/bootstrap/js,admin-lte/plugins/jquery,admin-lte/plugins/jquery-mousewheel}/**/*\" app/lib -C",
+    "prestart": "npm install",
+    "start": "http-server ./app -a localhost -p 8000 -c-1",
+    "pretest": "npm install",
+    "test": "karma start karma.conf.js",
+    "test-single-run": "npm test -- --single-run",
+    "preupdate-webdriver": "npm install",
+    "update-webdriver": "webdriver-manager update",
+    "preprotractor": "npm run update-webdriver",
+    "protractor": "protractor e2e-tests/protractor.conf.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/anatalia-maciel/meat-app-old.git"
+  },
+  "author": "Anatalia Maciel",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/anatalia-maciel/meat-app-old/issues"
+  },
+  "homepage": "https://github.com/anatalia-maciel/meat-app-old#readme",
+  "dependencies": {
+    "admin-lte": "^3.1.0",
+    "angular": "1.7.x",
+    "angular-animate": "1.7.x",
+    "angular-resource": "1.7.x",
+    "angular-route": "1.7.x"
+  },
+  "devDependencies": {
+    "angular-mocks": "1.7.x",
+    "cpx": "^1.5.0",
+    "http-server": "^0.11.1",
+    "jasmine-core": "^3.5.0",
+    "karma": "^3.1.4",
+    "karma-chrome-launcher": "^2.2.0",
+    "karma-firefox-launcher": "^1.3.0",
+    "karma-jasmine": "^1.1.2",
+    "protractor": "^5.4.4"
+  }
+}
