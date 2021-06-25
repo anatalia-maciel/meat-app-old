@@ -10,5 +10,5 @@ angular.module('meatApp', [
   'meatSidebarModule',
   'meatFooterModule',
   'meatContentModule',
-  'boxModule'
+  'boxInfoModule'
 ]);
